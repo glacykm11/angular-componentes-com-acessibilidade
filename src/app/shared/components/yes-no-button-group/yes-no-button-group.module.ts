@@ -4,7 +4,7 @@ import {
   NO_ERRORS_SCHEMA,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { YesNoButtonGroupComponent } from './YesNoButtonGroupComponent';
+import { YesNoButtonGroupComponent } from './yes-no-button-group.component';
 
 @NgModule({
   declarations: [YesNoButtonGroupComponent],
