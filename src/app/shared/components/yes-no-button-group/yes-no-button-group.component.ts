@@ -8,10 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class YesNoButtonGroupComponent implements OnInit {
   @Input() public value: string = null;
   @Input() public label = '';
+  public options = YesNoButtonGroupOptions;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public activate(value: string) {
+    this.value = value
+  }
+
+}
+
+enum YesNoButtonGroupOptions {
+  YES = 'yes',
+  NO = 'no'
 }
