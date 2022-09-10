@@ -1,29 +1,45 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-yes-no-button-group',
   templateUrl: './yes-no-button-group.component.html',
-  styleUrls: ['./yes-no-button-group.component.scss']
+  styleUrls: ['./yes-no-button-group.component.scss'],
 })
-export class YesNoButtonGroupComponent implements OnInit {
+export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   @Input() public value: string = null;
   @Input() public label = '';
   @Output() valueChange = new EventEmitter<string>();
   public options = YesNoButtonGroupOptions;
+  public onChange = (value: string) => {};
+  public onTouched = () => {};
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  public writeValue(value: any) {
+    this.value = value;
+    this.onChange(this.value);
   }
+
+  public registerOnChange(fn: () => void) {
+    this.onChange = fn;
+  }
+
+  public registerOnTouched(fn: any) {
+    this.onTouched = fn;
+  }
+
+  public setDisableState?(isDisabled: boolean) {}
+
+  ngOnInit(): void {}
 
   public activate(value: string) {
     this.value = value;
     this.valueChange.emit(this.value);
   }
-
 }
 
 enum YesNoButtonGroupOptions {
   YES = 'yes',
-  NO = 'no'
+  NO = 'no',
 }

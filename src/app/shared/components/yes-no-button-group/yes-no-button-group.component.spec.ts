@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YesNoButtonGroupComponent } from './yes-no-button-group.component';
+import { YesNoButtonGroupComponent } from './YesNoButtonGroupComponent';
 
 describe('YesNoButtonGroupComponent', () => {
   let component: YesNoButtonGroupComponent;
@@ -8,9 +8,8 @@ describe('YesNoButtonGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YesNoButtonGroupComponent ]
-    })
-    .compileComponents();
+      declarations: [YesNoButtonGroupComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
