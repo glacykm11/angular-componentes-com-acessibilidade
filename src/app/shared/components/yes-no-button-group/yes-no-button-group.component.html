@@ -1,4 +1,9 @@
-<div class="button-group" role="radiogroup" [attr.aria-labelledby]="id">
+<div
+  class="button-group"
+  role="radiogroup"
+  [attr.aria-labelledby]="id"
+  keyboardManager
+>
   <label [attr.id]="id">{{ label }}</label>
   <button
     role="radio"
