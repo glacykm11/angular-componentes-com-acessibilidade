@@ -9,6 +9,7 @@
     role="radio"
     [attr.tabindex]="value === options.YES || value === null ? 0 : -1"
     [attr.aria-checked]="value === options.YES"
+    keyboardManagerdtem
     type="button"
     class="button button-yes"
     [class.button-pressed]="value === options.YES"
@@ -20,6 +21,7 @@
     role="radio"
     [attr.tabindex]="value === options.NO ? 0 : -1"
     [attr.aria-checked]="value === options.NO"
+    keyboardManagedItem
     type="button"
     class="button button-no"
     [class.button-pressed]="value === options.NO"
