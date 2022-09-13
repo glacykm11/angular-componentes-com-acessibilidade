@@ -10,6 +10,7 @@
     [attr.tabindex]="value === options.YES || value === null ? 0 : -1"
     [attr.aria-checked]="value === options.YES"
     keyboardManagedItem
+    (focused)="activate(options.YES)"
     type="button"
     class="button button-yes"
     [class.button-pressed]="value === options.YES"
@@ -22,6 +23,7 @@
     [attr.tabindex]="value === options.NO ? 0 : -1"
     [attr.aria-checked]="value === options.NO"
     keyboardManagedItem
+    (focused)="activate(options.NO)"
     type="button"
     class="button button-no"
     [class.button-pressed]="value === options.NO"
