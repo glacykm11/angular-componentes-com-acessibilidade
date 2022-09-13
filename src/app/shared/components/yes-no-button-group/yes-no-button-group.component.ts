@@ -22,6 +22,7 @@ import { UniqueIdService } from './../../services/unique-id/unique-id.service';
   ],
 })
 export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
+  @Input() disabled: boolean;
   @Input() public value: string = null;
   @Input() public label = '';
   @Output() valueChange = new EventEmitter<string>();
@@ -50,7 +51,9 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  public setDisableState?(isDisabled: boolean) {}
+  public setDisableState?(isDisabled: boolean) {
+    this.disabled = isDisabled;
+  }
 
   public activate(value: string) {
     this.writeValue(value);
