@@ -16,6 +16,7 @@ export class KeyBoardManagerDirective {
   public manageKeys(event: KeyboardEvent) {
     switch (event.key) {
       case 'ArrowUp':
+        console.log(this.items)
         this.moveFocus(ArrowDirection.RIGHT).focus();
         console.log('up');
         break;
